@@ -69,8 +69,9 @@ class CerealStorageImpl(
      * @return true если контейнер уничтожен и false если контейнер не пуст
      */
     override fun removeContainer(cereal: Cereal): Boolean {
-        return if (storage.isEmpty()) {
-            storage.clear()
+        return if (storage.contains(cereal) &&
+            (getAmount(cereal) > 0f)) {
+            storage.remove(cereal)
             true
         } else {
             false
