@@ -70,8 +70,8 @@ class CerealStorageImpl(
      */
     override fun removeContainer(cereal: Cereal): Boolean {
         return if (storage.contains(cereal) &&
-            (getAmount(cereal) > 0f)) {
-            storage.remove(cereal)
+            (getAmount(cereal) == 0f)) {
+            storage.clear()
             true
         } else {
             false

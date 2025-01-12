@@ -93,7 +93,7 @@ class CerealStorageImplTest {
     @Test
     fun removeFullContainerTest() = with(storage) {
         addCereal(Cereal.MILLET, 3f)
-        assertTrue(removeContainer(Cereal.MILLET))
+        assertFalse(removeContainer(Cereal.MILLET))
     }
 
     @Test
@@ -104,7 +104,7 @@ class CerealStorageImplTest {
     @Test
     fun removeEmptyContainerTest() = with(storage) {
         addCereal(Cereal.MILLET, 0f)
-        assertFalse(removeContainer(Cereal.MILLET))
+        assertTrue(removeContainer(Cereal.MILLET))
     }
 
     @Test
